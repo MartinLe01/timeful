@@ -1,43 +1,10 @@
 @import 'tailwindcss';
 
-.m-plus-rounded-1c-thin {
-  font-family: 'M PLUS Rounded 1c', sans-serif;
-  font-weight: 100;
-  font-style: normal;
-}
-
-.m-plus-rounded-1c-light {
-  font-family: 'M PLUS Rounded 1c', sans-serif;
-  font-weight: 300;
-  font-style: normal;
-}
-
-.m-plus-rounded-1c-regular {
-  font-family: 'M PLUS Rounded 1c', sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.m-plus-rounded-1c-medium {
-  font-family: 'M PLUS Rounded 1c', sans-serif;
-  font-weight: 500;
-  font-style: normal;
-}
-
-.m-plus-rounded-1c-bold {
-  font-family: 'M PLUS Rounded 1c', sans-serif;
-  font-weight: 700;
-  font-style: normal;
-}
-
-.m-plus-rounded-1c-extrabold {
-  font-family: 'M PLUS Rounded 1c', sans-serif;
-  font-weight: 800;
-  font-style: normal;
-}
-
-.m-plus-rounded-1c-black {
-  font-family: 'M PLUS Rounded 1c', sans-serif;
-  font-weight: 900;
-  font-style: normal;
+@theme {
+  --font-sans: 'Nunito Sans', sans-serif;
+  --color-soft-chrome: #e8ecf1;
+  --color-toxic-violet: #3d007a;
+  --shadow-neu: 20px 20px 24px #9ea0a4, -20px -20px 24px #ffffff;
+  --shadow-neu-inset:
+    inset 43px -43px 86px #c5c9cd, inset -43px 43px 86px #ffffff;
 }

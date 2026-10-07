@@ -7,7 +7,7 @@ function App() {
   const [isTimerFocused, toggle] = useToggle();
 
   return (
-    <div className="flex min-h-screen flex-col gap-2 p-2">
+    <div className="flex min-h-screen flex-col gap-2 p-2 bg-soft-chrome">
       <Header />
 
       <main className="flex flex-1 flex-col gap-2">
