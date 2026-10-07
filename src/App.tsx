@@ -7,10 +7,10 @@ function App() {
   const [isTimerFocused, toggle] = useToggle();
 
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex min-h-screen flex-col gap-2 p-2">
       <Header />
 
-      <main className="flex flex-1 flex-col">
+      <main className="flex flex-1 flex-col gap-2">
         <TimerSection isTimerFocused={isTimerFocused} onClick={toggle} />
         <TasksSection isTimerFocused={isTimerFocused} onClick={toggle} />
       </main>
