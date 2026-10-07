@@ -1,20 +1,24 @@
-import { useState } from 'react';
 import dark from '../assets/dark.svg';
 import light from '../assets/light.svg';
 
-export function Header() {
-  const [isDarkOn, setIsDarkOn] = useState(false);
+interface HeaderProps {
+  isDarkOn: boolean;
+  setIsDarkOn: () => void;
+}
 
+export function Header({ isDarkOn, setIsDarkOn }: HeaderProps) {
   return (
-    <header className="flex items-center justify-between pr-4 min-h-12 font-normal rounded-2xl">
-      <h1 className="font-medium text-toxic-violet text-2xl py-2 px-4 rounded-xl shadow-neu">
+    <header className="flex items-center justify-between pr-4 min-h-12 font-normal rounded-2xl transition-all duration-300 ease-in md:w-2/3 md:mx-auto">
+      <h1
+        className={`font-medium text-2xl py-2 px-4 rounded-xl ${isDarkOn ? 'shadow-neu-dark text-soft-chrome' : 'shadow-neu text-toxic-violet'}`}
+      >
         Timeful.
       </h1>
 
       <label className="relative inline-block w-10 h-10 rounded-xl cursor-pointer">
         <input
           type="checkbox"
-          onClick={() => setIsDarkOn(!isDarkOn)}
+          onClick={setIsDarkOn}
           checked={isDarkOn}
           className="peer sr-only"
         />
