@@ -4,7 +4,10 @@
   --font-sans: 'Nunito Sans', sans-serif;
   --color-soft-chrome: #e8ecf1;
   --color-toxic-violet: #3d007a;
-  --shadow-neu: 20px 20px 24px #9ea0a4, -20px -20px 24px #ffffff;
-  --shadow-neu-inset:
-    inset 43px -43px 86px #c5c9cd, inset -43px 43px 86px #ffffff;
+  --color-dark: #292929;
+  --shadow-neu: 3px 3px 7px #8b8e91, -3px -3px 7px #ffffff;
+  --shadow-neu-dark: 15px 15px 30px #191919, -15px -15px 30px #393939;
+  --shadow-neu-inset: inset 3px 3px 7px #8b8e91, inset -3px -3px 7px #ffffff;
+  --shadow-neu-inset-violet:
+    inset 3px 3px 7px #250049, inset -3px -3px 7px #5500ab;
 }
