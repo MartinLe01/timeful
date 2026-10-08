@@ -18,19 +18,25 @@ export function TimerSection({ isTimerFocused, onClick }: TimerSectionProps) {
         className={`shadow-neu dark:shadow-neu-dark rounded-xl flex-1 flex-col p-10 ${isTimerFocused ? 'flex' : 'hidden'}`}
       >
         <div className="flex-1">
-          <div className=" flex justify-start h-2/3">
-            <button className="bg-violet-600 flex-1 rounded-l-full">
+          <div className=" flex justify-start h-2/3 p-2 shadow-neu-hard dark:shadow-neu-dark-hard rounded-xl">
+            <button className="bg-toxic-violet flex-1 rounded-l-lg shadow-retro hover:shadow-retro-hover transition:all duration-400 cursor-pointer">
               Pomodoro
             </button>
-            <button className="bg-amber-600 flex-1 rounded-r-full">
+            <button className="bg-toxic-violet flex-1 rounded-r-lg shadow-retro hover:shadow-retro-hover transition:all duration-400 cursor-pointer">
               Break
             </button>
           </div>
         </div>
         <div className="flex-4 flex flex-col justify-start gap-8">
-          <div className="bg-black h-1/2 text-slate-50 rounded-xl">Timer</div>
-          <div className="bg-yellow-600 h-1/5 rounded-xl">
-            <button>Button</button>
+          <div className=" h-1/2 text-slate-50 rounded-xl shadow-neu-hard dark:shadow-neu-dark-hard p-2">
+            <div className="bg-black h-full rounded-lg shadow-neu dark:shadow-neu-dark">
+              Timer
+            </div>
+          </div>
+          <div className="h-1/5 rounded-xl dark:shadow-neu-dark-hard shadow-neu-hard p-2">
+            <button className="bg-toxic-violet h-full w-full rounded-lg shadow-retro hover:shadow-retro-hover transition:all duration-400 cursor-pointer">
+              Button
+            </button>
           </div>
         </div>
       </div>

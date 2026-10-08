@@ -8,8 +8,10 @@
   --color-toxic-violet: #3d007a;
   --color-dark: #292929;
   --shadow-neu: 15px 15px 30px #a7aaae, -15px -15px 30px #ffffff;
+  --shadow-neu-hard: 5px 5px 9px #b3b6ba, -5px -5px 9px #ffffff;
   --shadow-neu-low: 15px 15px 30px #d1d4d9, -15px -15px 30px #ffffff;
   --shadow-neu-dark: 15px 15px 30px #161616, -15px -15px 30px #3c3c3c;
+  --shadow-neu-dark-hard: 5px 5px 9px #131313, -5px -5px 9px #3f3f3f;
   --shadow-neu-dark-low: 15px 15px 30px #222222, -15px -15px 30px #2d2d2d;
   --shadow-neu-inset:
     inset 15px 15px 30px #a7aaae, inset -15px -15px 30px #ffffff;
@@ -17,4 +19,10 @@
     inset 15px 15px 30px #161616, inset -15px -15px 30px #3c3c3c;
   --shadow-neu-inset-violet:
     inset 5px 5px 10px #210042, inset -5px -5px 10px #5900b2;
+  --shadow-retro:
+    inset 0 2px 4px rgb(255 255 255 / 0.4), inset 0 -3px 3px rgb(0 0 0 / 0.2),
+    0 8px 12px rgb(0 0 0 / 0.3);
+  --shadow-retro-hover:
+    inset 0 2px 2px rgb(255 255 255 / 0.4), inset 0 -3px 2px rgb(0 0 0 / 0.2),
+    0 8px 12px rgb(0 0 0 / 0.3);
 }
