@@ -13,8 +13,6 @@ export function TimerSection({ isTimerFocused, onClick }: TimerSectionProps) {
             : 'flex-1 shadow-neu dark:shadow-neu-dark hover:shadow-neu-low hover:dark:shadow-neu-dark-low'
         } `}
       onClick={onClick}
-    >
-      Timer
-    </div>
+    ></div>
   );
 }
