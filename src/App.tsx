@@ -1,20 +1,16 @@
-import { useState } from 'react';
 import { Header } from './components/Header';
 import { TimerSection } from './components/TimerSection';
 import { TasksSection } from './components/TasksSection';
 import { useToggle } from './hooks/useToggle';
 
 function App() {
-  const [isDarkOn, setIsDarkOn] = useState(false);
   const [isTimerFocused, toggle] = useToggle();
 
   return (
-    <div
-      className={`flex min-h-screen flex-col gap-2 p-2 ${isDarkOn ? 'bg-dark' : 'bg-soft-chrome'} transition-all duration-300 ease-in`}
-    >
-      <Header isDarkOn={isDarkOn} setIsDarkOn={() => setIsDarkOn(!isDarkOn)} />
+    <div className="flex min-h-screen flex-col">
+      <Header />
 
-      <main className="flex flex-1 flex-col gap-2">
+      <main className="flex flex-1 flex-col">
         <TimerSection isTimerFocused={isTimerFocused} onClick={toggle} />
         <TasksSection isTimerFocused={isTimerFocused} onClick={toggle} />
       </main>
