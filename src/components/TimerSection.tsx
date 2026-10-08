@@ -6,7 +6,7 @@ interface TimerSectionProps {
 export function TimerSection({ isTimerFocused, onClick }: TimerSectionProps) {
   return (
     <div
-      className={`w-full bg-blue-600 ${isTimerFocused ? 'max-h-11/12' : 'max-h-20'} flex-1`}
+      className={`w-full bg-blue-600 ${isTimerFocused ? 'flex-4' : 'flex-1'} rounded-2xl transition-all duration-700 ease-in-out md:w-2/3 md:mx-auto`}
       onClick={onClick}
     >
       Timer
