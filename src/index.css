@@ -1,13 +1,17 @@
 @import 'tailwindcss';
+@custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
   --font-sans: 'Nunito Sans', sans-serif;
   --color-soft-chrome: #e8ecf1;
   --color-toxic-violet: #3d007a;
   --color-dark: #292929;
-  --shadow-neu: 3px 3px 7px #8b8e91, -3px -3px 7px #ffffff;
-  --shadow-neu-dark: 15px 15px 30px #191919, -15px -15px 30px #393939;
-  --shadow-neu-inset: inset 3px 3px 7px #8b8e91, inset -3px -3px 7px #ffffff;
+  --shadow-neu: 15px 15px 30px #a7aaae, -15px -15px 30px #ffffff;
+  --shadow-neu-dark: 15px 15px 30px #161616, -15px -15px 30px #3c3c3c;
+  --shadow-neu-inset:
+    inset 15px 15px 30px #a7aaae, inset -15px -15px 30px #ffffff;
+  --shadow-neu-inset-dark:
+    inset 15px 15px 30px #161616, inset -15px -15px 30px #3c3c3c;
   --shadow-neu-inset-violet:
-    inset 3px 3px 7px #250049, inset -3px -3px 7px #5500ab;
+    inset 5px 5px 10px #210042, inset -5px -5px 10px #5900b2;
 }

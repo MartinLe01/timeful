@@ -8,7 +8,7 @@ interface HeaderProps {
 
 export function Header({ isDarkOn, setIsDarkOn }: HeaderProps) {
   return (
-    <header className="flex items-center justify-between px-1 min-h-12 font-normal rounded-2xl transition-all duration-300 ease-in md:w-2/3 md:mx-auto">
+    <header className="flex items-center justify-between min-h-12 font-normal transition-all duration-300 ease-in md:w-2/3 md:mx-auto">
       <h1
         className={`font-medium text-2xl py-2 px-4 rounded-xl ${isDarkOn ? 'shadow-neu-dark text-soft-chrome' : 'shadow-neu text-toxic-violet'}`}
       >
