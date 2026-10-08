@@ -6,11 +6,11 @@ interface TimerSectionProps {
 export function TimerSection({ isTimerFocused, onClick }: TimerSectionProps) {
   return (
     <div
-      className={`w-full rounded-xl transition-all duration-700 ease-in-out md:w-2/3 md:mx-auto  
+      className={`w-full rounded-xl transition-all duration-700 ease-in-out md:w-2/3 md:mx-auto
         ${
           isTimerFocused
             ? 'flex-5 shadow-neu-inset dark:shadow-neu-inset-dark'
-            : 'flex-1 shadow-neu dark:shadow-neu-dark'
+            : 'flex-1 shadow-neu dark:shadow-neu-dark hover:shadow-neu-low hover:dark:shadow-neu-dark-low'
         } `}
       onClick={onClick}
     >
