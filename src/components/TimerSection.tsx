@@ -15,9 +15,9 @@ export function TimerSection({ isTimerFocused, onClick }: TimerSectionProps) {
       onClick={onClick}
     >
       <div
-        className={`bg-red-600 rounded-xl flex-1 flex-col p-10 ${isTimerFocused ? 'flex' : 'hidden'}`}
+        className={`shadow-neu dark:shadow-neu-dark rounded-xl flex-1 flex-col p-10 ${isTimerFocused ? 'flex' : 'hidden'}`}
       >
-        <div className="flex-1 bg-blue-600">
+        <div className="flex-1">
           <div className=" flex justify-start h-2/3">
             <button className="bg-violet-600 flex-1 rounded-l-full">
               Pomodoro
@@ -27,7 +27,7 @@ export function TimerSection({ isTimerFocused, onClick }: TimerSectionProps) {
             </button>
           </div>
         </div>
-        <div className="flex-4 bg-green-600 flex flex-col justify-evenly">
+        <div className="flex-4 flex flex-col justify-start gap-8">
           <div className="bg-black h-1/2 text-slate-50 rounded-xl">Timer</div>
           <div className="bg-yellow-600 h-1/5 rounded-xl">
             <button>Button</button>

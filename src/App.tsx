@@ -14,7 +14,7 @@ function App() {
 
   return (
     <div
-      className={`flex min-h-screen flex-col gap-6 p-2 ${isDarkOn ? 'bg-dark' : 'bg-soft-chrome'} transition-all duration-300 ease-in`}
+      className={`flex min-h-screen flex-col gap-6 p-2 bg-soft-chrome dark:bg-dark transition-all duration-300 ease-in`}
     >
       <Header isDarkOn={isDarkOn} setIsDarkOn={toggleDark} />
 

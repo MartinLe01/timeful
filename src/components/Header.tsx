@@ -10,7 +10,7 @@ export function Header({ isDarkOn, setIsDarkOn }: HeaderProps) {
   return (
     <header className="flex items-center justify-between min-h-12 font-normal transition-all duration-300 ease-in md:w-2/3 md:mx-auto">
       <h1
-        className={`font-medium text-2xl py-2 px-4 rounded-2xl ${isDarkOn ? 'shadow-neu-dark text-soft-chrome' : 'shadow-neu text-toxic-violet'}`}
+        className={`font-medium text-2xl py-2 px-4 rounded-2xl dark:shadow-neu-dark dark:text-soft-chrome shadow-neu text-toxic-violet`}
       >
         Timeful.
       </h1>
