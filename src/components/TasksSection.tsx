@@ -6,12 +6,7 @@ interface TasksSectionProps {
 export function TasksSection({ isTimerFocused, onClick }: TasksSectionProps) {
   return (
     <div
-      className={`w-full rounded-xl transition-all duration-700 ease-in-out md:w-2/3 md:mx-auto
-        ${
-          isTimerFocused
-            ? 'flex-1 shadow-neu dark:shadow-neu-dark hover:shadow-neu-low hover:dark:shadow-neu-dark-low'
-            : 'flex-5 shadow-neu-inset dark:shadow-neu-inset-dark'
-        } `}
+      className={`w-full bg-green-600 ${isTimerFocused ? 'max-h-20' : 'max-h-11/12'} flex-1`}
       onClick={onClick}
     >
       Tasks
