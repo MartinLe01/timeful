@@ -12,7 +12,7 @@ export function TasksSection({ isTimerFocused, onClick }: TasksSectionProps) {
             ? 'grow basis-0 shadow-neu dark:shadow-neu-dark hover:shadow-neu-low hover:dark:shadow-neu-dark-low'
             : 'grow-3 basis-0 shadow-neu-inset dark:shadow-neu-inset-dark'
         } `}
-      onClick={onClick}
+      onClick={isTimerFocused ? onClick : () => {}}
     ></div>
   );
 }
