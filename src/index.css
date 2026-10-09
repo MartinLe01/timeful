@@ -1,11 +1,14 @@
 @import 'tailwindcss';
 @plugin "daisyui";
+@import 'dseg/css/dseg.css';
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
   --font-sans: 'Nunito Sans', sans-serif;
+  --font-segment: 'DSEG7-Classic', monospace;
   --color-soft-chrome: #e8ecf1;
   --color-toxic-violet: #3d007a;
+  --color-light-violet: #6900d1;
   --color-dark: #292929;
   --shadow-neu: 15px 15px 30px #a7aaae, -15px -15px 30px #ffffff;
   --shadow-neu-hard: 5px 5px 9px #b3b6ba, -5px -5px 9px #ffffff;

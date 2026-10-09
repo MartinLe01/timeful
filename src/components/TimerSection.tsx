@@ -29,7 +29,9 @@ export function TimerSection({ isTimerFocused, onClick }: TimerSectionProps) {
         </div>
         <div className="flex-4 flex flex-col justify-start gap-8">
           <div className=" h-1/2 text-slate-50 rounded-xl shadow-neu-hard dark:shadow-neu-dark-hard p-2">
-            <div className="bg-neutral-950 h-full rounded-lg shadow-display dark:shadow-display-dark"></div>
+            <div className="bg-neutral-950 h-full rounded-lg shadow-display dark:shadow-display-dark text-5xl flex justify-center items-center font-segment">
+              <div>22:59</div>
+            </div>
           </div>
           <div className="h-1/5 rounded-xl dark:shadow-neu-dark-hard shadow-neu-hard p-2">
             <button className="bg-toxic-violet h-full w-full rounded-lg shadow-retro hover:shadow-retro-hover transition:all duration-400 cursor-pointer">
