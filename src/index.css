@@ -19,10 +19,9 @@
     inset 15px 15px 30px #161616, inset -15px -15px 30px #3c3c3c;
   --shadow-neu-inset-violet:
     inset 5px 5px 10px #210042, inset -5px -5px 10px #5900b2;
-  --shadow-retro:
-    inset 0 2px 4px rgb(255 255 255 / 0.4), inset 0 -3px 3px rgb(0 0 0 / 0.2),
-    0 8px 12px rgb(0 0 0 / 0.3);
-  --shadow-retro-hover:
-    inset 0 2px 2px rgb(255 255 255 / 0.4), inset 0 -3px 2px rgb(0 0 0 / 0.2),
-    0 8px 12px rgb(0 0 0 / 0.3);
+  --shadow-retro: inset -7px -7px 8px #2d005a, inset 7px 7px 8px #4d009a;
+  --shadow-retro-hover: inset -5px -5px 6px #30005f, inset 5px 5px 6px #4a0095;
+  --shadow-display-dark:
+    inset 15px 15px 9px #050505, inset -15px -15px 9px #0f0f0f;
+  --shadow-display: inset 9px 9px 0px #040404, inset -9px -9px 0px #101010;
 }
