@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 
 function App() {
   const [isDarkOn, toggleDark] = useToggle();
-  const [isTimerFocused, toggle] = useToggle();
+  const [isTimerFocused, toggle] = useToggle(true);
 
   useEffect(() => {
     document.documentElement.classList.toggle('dark', isDarkOn);

@@ -7,6 +7,13 @@ interface TimerSectionProps {
   onClick: () => void;
 }
 
+type TimerMode = 'pomodoro' | 'break';
+
+const durations: Record<TimerMode, number> = {
+  pomodoro: 25 * 60,
+  break: 5 * 60,
+};
+
 export function TimerSection({ isTimerFocused, onClick }: TimerSectionProps) {
   return (
     <div
@@ -23,7 +30,7 @@ export function TimerSection({ isTimerFocused, onClick }: TimerSectionProps) {
       >
         <SessionControls />
         <div className="flex-4 flex flex-col justify-start gap-8">
-          <Timer />
+          <Timer duration={durations.pomodoro} />
           <Button label="Start" onClick={() => console.log('Timer started')} />
         </div>
       </div>
