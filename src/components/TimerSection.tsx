@@ -1,20 +1,16 @@
 import { SessionControls } from './SessionControls';
 import { TimerDisplay } from './TimerDisplay';
 import { Button } from './Button';
+import { useTimer } from '../hooks/useTimer';
 
 interface TimerSectionProps {
   isTimerFocused: boolean;
   onClick: () => void;
 }
 
-type TimerMode = 'pomodoro' | 'break';
-
-const durations: Record<TimerMode, number> = {
-  pomodoro: 25 * 60,
-  break: 5 * 60,
-};
-
 export function TimerSection({ isTimerFocused, onClick }: TimerSectionProps) {
+  const timer = useTimer();
+
   return (
     <div
       className={`w-full rounded-2xl transition-all duration-700 ease-in-out md:w-2/3 md:mx-auto p-8 flex
@@ -30,7 +26,7 @@ export function TimerSection({ isTimerFocused, onClick }: TimerSectionProps) {
       >
         <SessionControls />
         <div className="flex-4 flex flex-col justify-start gap-8">
-          <TimerDisplay duration={durations.pomodoro} />
+          <TimerDisplay duration={timer.remainingTime} />
           <Button label="Start" onClick={() => console.log('Timer started')} />
         </div>
       </div>
