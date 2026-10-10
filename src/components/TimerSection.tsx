@@ -24,7 +24,7 @@ export function TimerSection({ isTimerFocused, onClick }: TimerSectionProps) {
         <SessionControls />
         <div className="flex-4 flex flex-col justify-start gap-8">
           <Timer />
-          <Button />
+          <Button label="Start" onClick={() => console.log('Timer started')} />
         </div>
       </div>
     </div>
