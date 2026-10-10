@@ -27,7 +27,10 @@ export function TimerSection({ isTimerFocused, onClick }: TimerSectionProps) {
         <SessionControls mode={timer.mode} onModeSwitch={timer.switch} />
         <div className="flex-4 flex flex-col justify-start gap-8">
           <TimerDisplay duration={timer.remainingTime} />
-          <Button label="Start" onClick={() => console.log('Timer started')} />
+          <Button
+            label={timer.isRunning ? 'Stop' : 'Start'}
+            onClick={() => timer.toggle()}
+          />
         </div>
       </div>
     </div>
