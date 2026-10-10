@@ -1,8 +1,8 @@
-interface TimerProps {
+interface TimerDisplayProps {
   duration: number;
 }
 
-export function Timer({ duration }: TimerProps) {
+export function TimerDisplay({ duration }: TimerDisplayProps) {
   const minutes: number = Math.floor(duration / 60);
   const second: number = duration % 60;
 

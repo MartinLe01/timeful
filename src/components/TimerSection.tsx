@@ -1,5 +1,5 @@
 import { SessionControls } from './SessionControls';
-import { Timer } from './Timer';
+import { TimerDisplay } from './TimerDisplay';
 import { Button } from './Button';
 
 interface TimerSectionProps {
@@ -30,7 +30,7 @@ export function TimerSection({ isTimerFocused, onClick }: TimerSectionProps) {
       >
         <SessionControls />
         <div className="flex-4 flex flex-col justify-start gap-8">
-          <Timer duration={durations.pomodoro} />
+          <TimerDisplay duration={durations.pomodoro} />
           <Button label="Start" onClick={() => console.log('Timer started')} />
         </div>
       </div>
