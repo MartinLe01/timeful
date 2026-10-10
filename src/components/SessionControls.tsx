@@ -17,7 +17,9 @@ export function SessionControls({ mode, onModeSwitch }: SessionControlsProps) {
             className="peer"
             name="mode"
           />
-          <span className="absolute rounded-l-lg inset-0 bg-toxic-violet shadow-retro hover:shadow-retro-hover transition:all duration-400 cursor-pointer peer-checked:shadow-neu-inset-violet" />
+          <span
+            className={`absolute rounded-l-lg inset-0 bg-toxic-violet transition:all duration-400 cursor-pointer ${mode === 'pomodoro' ? 'shadow-neu-inset-violet' : 'shadow-retro hover:shadow-retro-hover'}`}
+          />
           <span className="absolute">Pomodoro</span>
         </label>
         <label className="relative flex-1 flex justify-center items-center">
@@ -28,8 +30,10 @@ export function SessionControls({ mode, onModeSwitch }: SessionControlsProps) {
             className="peer"
             name="mode"
           />
-          <span className="absolute rounded-r-lg inset-0 bg-toxic-violet shadow-retro hover:shadow-retro-hover transition:all duration-400 cursor-pointer peer-checked:shadow-neu-inset-violet" />
-          <span className="absolute">Pomodoro</span>
+          <span
+            className={`absolute rounded-r-lg inset-0 bg-toxic-violet transition:all duration-400 cursor-pointer ${mode === 'break' ? 'shadow-neu-inset-violet' : 'shadow-retro hover:shadow-retro-hover'}`}
+          />
+          <span className="absolute">Break</span>
         </label>
       </div>
     </div>
