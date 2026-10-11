@@ -1,14 +1,20 @@
 @import 'tailwindcss';
+@plugin "daisyui";
+@import 'dseg/css/dseg.css';
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
   --font-sans: 'Nunito Sans', sans-serif;
+  --font-segment: 'DSEG7-Classic', monospace;
   --color-soft-chrome: #e8ecf1;
   --color-toxic-violet: #3d007a;
+  --color-light-violet: #6900d1;
   --color-dark: #292929;
   --shadow-neu: 15px 15px 30px #a7aaae, -15px -15px 30px #ffffff;
+  --shadow-neu-hard: 5px 5px 9px #b3b6ba, -5px -5px 9px #ffffff;
   --shadow-neu-low: 15px 15px 30px #d1d4d9, -15px -15px 30px #ffffff;
   --shadow-neu-dark: 15px 15px 30px #161616, -15px -15px 30px #3c3c3c;
+  --shadow-neu-dark-hard: 5px 5px 9px #131313, -5px -5px 9px #3f3f3f;
   --shadow-neu-dark-low: 15px 15px 30px #222222, -15px -15px 30px #2d2d2d;
   --shadow-neu-inset:
     inset 15px 15px 30px #a7aaae, inset -15px -15px 30px #ffffff;
@@ -16,4 +22,14 @@
     inset 15px 15px 30px #161616, inset -15px -15px 30px #3c3c3c;
   --shadow-neu-inset-violet:
     inset 5px 5px 10px #210042, inset -5px -5px 10px #5900b2;
+  --shadow-neu-inset-light:
+    inset 5px 5px 9px #3c0077, inset -5px -5px 9px #9600ff;
+  --shadow-retro: inset -7px -7px 8px #2d005a, inset 7px 7px 8px #4d009a;
+  --shadow-retro-hover:
+    inset -5px -5px 10px #38006f, inset 5px 5px 10px #420085;
+  --shadow-light: inset -5px -5px 8px #420084, inset 5px 5px 8px #9000ff;
+  --shadow-light-hover: inset -5px -5px 8px #6200c2, inset 5px 5px 8px #7000e0;
+  --shadow-display-dark:
+    inset 15px 15px 9px #050505, inset -15px -15px 9px #0f0f0f;
+  --shadow-display: inset 9px 9px 0px #040404, inset -9px -9px 0px #101010;
 }
