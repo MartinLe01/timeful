@@ -22,7 +22,7 @@ export function TimerSection({ isTimerFocused, onClick }: TimerSectionProps) {
       onClick={isTimerFocused ? () => {} : onClick}
     >
       <div
-        className={`shadow-neu dark:shadow-neu-dark rounded-xl flex-1 flex-col p-10 ${isTimerFocused ? 'flex' : 'hidden'}`}
+        className={`shadow-neu dark:shadow-neu-dark rounded-xl flex-1 transition-all duration-700 flex-col p-10 ${isTimerFocused ? 'flex' : 'hidden'}`}
       >
         <SessionControls mode={timer.mode} onModeSwitch={timer.switch} />
         <div className="flex-4 flex flex-col justify-start gap-8">
@@ -33,6 +33,11 @@ export function TimerSection({ isTimerFocused, onClick }: TimerSectionProps) {
           />
         </div>
       </div>
+
+      <TimerDisplay
+        duration={timer.remainingTime}
+        isTimerFocused={isTimerFocused}
+      />
     </div>
   );
 }
