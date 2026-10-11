@@ -9,9 +9,9 @@ export function TimerDisplay({ duration, isTimerFocused }: TimerDisplayProps) {
 
   return (
     <div
-      className={`h-1/2 w-full text-slate-50 rounded-xl shadow-neu-hard dark:shadow-neu-dark-hard p-2 m-auto ${isTimerFocused ? 'hidden' : 'inline-block'}`}
+      className={`h-4/5 w-full text-slate-50 rounded-xl shadow-neu-hard dark:shadow-neu-dark-hard p-2 m-auto ${isTimerFocused ? 'hidden' : 'inline-block'}`}
     >
-      <div className="bg-neutral-950 h-full rounded-lg shadow-display dark:shadow-display-dark text-5xl flex justify-center items-center font-segment">
+      <div className="bg-neutral-950 h-full rounded-lg shadow-display dark:shadow-display-dark text-5xl md:text-7xl flex justify-center items-center font-segment">
         <div>
           {`${String(minutes).padStart(2, '0')}:${String(second).padStart(2, '0')}`}
         </div>
