@@ -13,7 +13,7 @@ export function TimerSection({ isTimerFocused, onClick }: TimerSectionProps) {
 
   return (
     <div
-      className={`w-full rounded-2xl transition-all duration-700 ease-in-out md:w-2/3 md:mx-auto p-8 flex
+      className={`w-full rounded-2xl transition-all duration-500 ease-in-out md:w-2/3 md:mx-auto p-8 flex
         ${
           isTimerFocused
             ? 'grow-3 basis-0 shadow-neu-inset dark:shadow-neu-inset-dark'
@@ -25,12 +25,11 @@ export function TimerSection({ isTimerFocused, onClick }: TimerSectionProps) {
         className={`shadow-neu dark:shadow-neu-dark rounded-xl flex-1 transition-all duration-700 flex-col p-10 ${isTimerFocused ? 'flex' : 'hidden'}`}
       >
         <SessionControls mode={timer.mode} onModeSwitch={timer.switch} />
-        <div className="flex-4 flex flex-col justify-start gap-8">
+        <div className="flex-4 flex flex-col gap-8">
           <TimerDisplay duration={timer.remainingTime} />
-          <Button
-            label={timer.isRunning ? 'Stop' : 'Start'}
-            onClick={() => timer.toggle()}
-          />
+          <Button onClick={() => timer.toggle()}>
+            {timer.isRunning ? 'Stop' : 'Start'}
+          </Button>
         </div>
       </div>
 
