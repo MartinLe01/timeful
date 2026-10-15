@@ -17,7 +17,7 @@ export function TasksSection({ isTimerFocused, onClick }: TasksSectionProps) {
       onClick={isTimerFocused ? onClick : () => {}}
     >
       <div
-        className={`shadow-neu dark:shadow-neu-dark rounded-lg transition-all duration-700 flex-col p-10 h-full ${isTimerFocused ? 'hidden' : 'flex'}`}
+        className={`shadow-neu dark:shadow-neu-dark rounded-lg transition-all duration-700 flex-col p-4 md:p-10 h-full ${isTimerFocused ? 'hidden' : 'flex'}`}
       >
         <div className="shadow-neu dark:shadow-neu-dark rounded-lg text-toxic-violet dark:text-slate-50 font-medium flex justify-between p-4">
           <div>Radio inputs</div>

@@ -22,10 +22,17 @@ export function TimerSection({ isTimerFocused, onClick }: TimerSectionProps) {
       onClick={isTimerFocused ? () => {} : onClick}
     >
       <div
-        className={`shadow-neu dark:shadow-neu-dark rounded-xl flex-1 transition-all duration-700 flex-col p-10 ${isTimerFocused ? 'flex' : 'hidden'}`}
+        className={`shadow-neu dark:shadow-neu-dark rounded-xl gap-4 flex-1 transition-all duration-700 flex-col p-10 ${isTimerFocused ? 'flex' : 'hidden'}`}
       >
-        <SessionControls mode={timer.mode} onModeSwitch={timer.switch} />
-        <div className="flex-4 flex flex-col gap-8">
+        <div className="h-1/6 md:h-1/7">
+          <SessionControls
+            mode={timer.mode}
+            onModeSwitch={timer.switch}
+            radioLabel1="Pomodoro"
+            radioLabel2="Break"
+          />
+        </div>
+        <div className="flex-1 flex flex-col gap-8">
           <TimerDisplay duration={timer.remainingTime} />
           <Button onClick={() => timer.toggle()}>
             {timer.isRunning ? 'Stop' : 'Start'}
