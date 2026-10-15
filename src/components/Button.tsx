@@ -1,32 +1,16 @@
-interface ButtonStyles {
-  bg: string;
-  shadow: string;
-  shadowOnHover: string;
-}
-
 interface ButtonProps {
   label: string;
   onClick: () => void;
-  styles?: ButtonStyles;
 }
 
-export function Button({
-  label,
-  onClick,
-  styles = {
-    bg: 'bg-light-violet dark:bg-toxic-violet',
-    shadow: 'shadow-light dark:shadow-retro',
-    shadowOnHover: 'hover:shadow-light-hover dark:hover:shadow-retro-hover',
-  },
-}: ButtonProps) {
+export function Button({ label, onClick }: ButtonProps) {
   return (
-    <div className="h-1/5 rounded-xl dark:shadow-neu-dark-hard shadow-neu-hard p-2">
-      <button
-        onClick={onClick}
-        className={`${styles.bg} ${styles.shadow} ${styles.shadowOnHover} h-full w-full rounded-lg transition:all duration-400 cursor-pointer font-extrabold text-xl`}
-      >
-        {label}
-      </button>
-    </div>
+    <button
+      onClick={onClick}
+      className="h-1/5 w-full shadow-neu-hard dark:shadow-neu-dark-hard rounded-lg cursor-pointer font-extrabold text-xl transition-all duration-300 
+      text-toxic-violet dark:text-slate-50 hover:bg-light-violet hover:text-slate-50 hover:dark:bg-toxic-violet hover:-translate-y-0.5"
+    >
+      {label}
+    </button>
   );
 }
