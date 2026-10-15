@@ -1,4 +1,6 @@
-import { useReducer } from 'react';
+import { useReducer, useEffect } from 'react';
+
+const STORAGE_KEY = 'tasks';
 
 interface TaskItem {
   id: string;
@@ -33,29 +35,13 @@ function tasksReducer(state: Tasks, action: TasksActions): Tasks {
     case 'delete':
       return { items: state.items.filter((item) => item.id !== action.id) };
 
-    case 'toggleActive': {
-      const activeItem = state.items.find((item) => item.isActive === true);
-
-      if (!activeItem) {
-        return {
-          items: state.items.map((item) =>
-            item.id === action.id ? { ...item, isActive: true } : item,
-          ),
-        };
-      } else {
-        return {
-          items: state.items
-            .map((item) => {
-              return { ...item, isActive: false };
-            })
-            .map((item) =>
-              item.id === action.id
-                ? { ...item, isActive: !item.isActive }
-                : item,
-            ),
-        };
-      }
-    }
+    case 'toggleActive':
+      return {
+        items: state.items.map((item) => ({
+          ...item,
+          isActive: item.id === action.id ? !item.isActive : false,
+        })),
+      };
 
     case 'rename':
       return {
@@ -69,15 +55,47 @@ function tasksReducer(state: Tasks, action: TasksActions): Tasks {
   }
 }
 
+function isTaskItem(value: unknown): value is TaskItem {
+  return (
+    typeof value === 'object' &&
+    value !== null &&
+    'id' in value &&
+    typeof value.id === 'string' &&
+    'title' in value &&
+    typeof value.title === 'string' &&
+    'isActive' in value &&
+    typeof value.isActive === 'boolean'
+  );
+}
+
+function loadTasks(): Tasks {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (raw === null) return { items: [] };
+
+    const parsed: unknown = JSON.parse(raw);
+    if (Array.isArray(parsed) && parsed.every(isTaskItem)) {
+      return { items: parsed };
+    }
+    return { items: [] };
+  } catch {
+    return { items: [] };
+  }
+}
+
 export function useTasks() {
-  const [tasks, dispatch] = useReducer(tasksReducer, { items: [] });
+  const [tasks, dispatch] = useReducer(tasksReducer, null, loadTasks);
+
+  useEffect(() => {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks.items));
+  }, [tasks]);
 
   return {
     // get tasks sorted based on isActive, true first
-    getSortedTasks: tasks.items.sort(
+    sortedTasks: [...tasks.items].sort(
       (a, b) => Number(b.isActive) - Number(a.isActive),
     ),
-    getTotalTasks: tasks.items.length,
+    totalTasks: tasks.items.length,
     create: (title: string) => dispatch({ type: 'create', title }),
     delete: (id: string) => dispatch({ type: 'delete', id }),
     toggleActive: (id: string) => dispatch({ type: 'toggleActive', id }),
