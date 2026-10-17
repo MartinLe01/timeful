@@ -1,14 +1,23 @@
 import { useState } from 'react';
 import { Button } from './Button';
-import { useTasks } from '../hooks/useTasks';
 
-export function TaskCard() {
+interface TaskItem {
+  id: string;
+  title: string;
+  isActive: boolean;
+}
+
+interface TaskCardProps {
+  task: TaskItem;
+  onDelete: (id: string) => void;
+}
+
+export function TaskCard({ task, onDelete }: TaskCardProps) {
   const [isEditing, setIsEditing] = useState(false);
   const [newTitle, setNewTitle] = useState('Task');
-  //const tasks = useTasks();
 
   return (
-    <div className="w-full rounded-xl shadow-neu dark:shadow-neu-dark p-4">
+    <div className="w-full rounded-xl shadow-neu dark:shadow-neu-dark p-4 block">
       <div className="h-9 flex mb-4">
         <p
           className={`text-xl text-toxic-violet dark:text-slate-50 h-full pt-1 pl-2 ${isEditing ? 'hidden' : 'inline-block'}`}
@@ -29,7 +38,7 @@ export function TaskCard() {
             <Button onClick={() => setIsEditing(!isEditing)}>
               <span className="material-symbols-outlined">edit_square</span>
             </Button>
-            <Button onClick={() => {}} variation="danger">
+            <Button onClick={() => onDelete(task.id)} variation="danger">
               <span className="material-symbols-outlined">delete</span>
             </Button>
           </>

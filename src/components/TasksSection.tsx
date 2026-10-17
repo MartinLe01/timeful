@@ -25,8 +25,12 @@ export function TasksSection({ isTimerFocused, onClick }: TasksSectionProps) {
       >
         <TaskInputs create={tasks.create} />
 
-        <div className="flex gap-4">
-          <TaskCard />
+        <div className="flex flex-col gap-4">
+          {tasks.sortedTasks.map((task) => {
+            return (
+              <TaskCard key={task.id} task={task} onDelete={tasks.delete} />
+            );
+          })}
         </div>
       </div>
     </div>
