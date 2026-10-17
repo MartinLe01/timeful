@@ -29,6 +29,14 @@ export function TaskCard({ task, onDelete, onRename }: TaskCardProps) {
     setNewTitle(task.title);
   }
 
+  function handleKeyDown(e: React.KeyboardEvent<HTMLInputElement>) {
+    if (e.key === 'Enter') {
+      onConfirmEdit();
+    } else if (e.key === 'Escape') {
+      onCancelEdit();
+    }
+  }
+
   return (
     <div className="w-full rounded-xl shadow-neu dark:shadow-neu-dark p-4 block">
       <div className="h-9 flex mb-4">
@@ -36,6 +44,7 @@ export function TaskCard({ task, onDelete, onRename }: TaskCardProps) {
           <input
             value={newTitle}
             onChange={(e) => setNewTitle(e.target.value)}
+            onKeyDown={(e) => handleKeyDown(e)}
             type="text"
             className={`shadow-neu-inset rounded-lg min-w-0 h-full text-xl text-toxic-violet dark:text-slate-50 inline-block ${isEditing ? 'p-2 w-full' : 'w-0'}`}
           />
