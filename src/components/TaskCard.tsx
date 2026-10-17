@@ -12,6 +12,11 @@ export function TaskCard({ task, onDelete, onRename }: TaskCardProps) {
   const [isEditing, setIsEditing] = useState(false);
   const [newTitle, setNewTitle] = useState(task.title);
 
+  function handleStartEdit() {
+    setNewTitle(task.title);
+    setIsEditing(true);
+  }
+
   function handleConfirmEdit() {
     const trimmed = newTitle.trim();
     if (trimmed === '') return;
@@ -40,7 +45,7 @@ export function TaskCard({ task, onDelete, onRename }: TaskCardProps) {
             autoFocus
             value={newTitle}
             onChange={(e) => setNewTitle(e.target.value)}
-            onKeyDown={(e) => handleKeyDown(e)}
+            onKeyDown={handleKeyDown}
             type="text"
             className="shadow-neu-inset rounded-lg min-w-0 h-full text-xl text-toxic-violet dark:text-slate-50 inline-block p-2 w-full"
           />
@@ -54,7 +59,7 @@ export function TaskCard({ task, onDelete, onRename }: TaskCardProps) {
       <div className="flex justify-end gap-2">
         {!isEditing ? (
           <>
-            <Button onClick={() => setIsEditing(true)}>
+            <Button onClick={handleStartEdit}>
               <span className="material-symbols-outlined" aria-hidden="true">
                 edit_square
               </span>
