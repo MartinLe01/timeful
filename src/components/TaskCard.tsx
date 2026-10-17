@@ -33,7 +33,7 @@ export function TaskCard({ task, onDelete, onRename }: TaskCardProps) {
   }
 
   return (
-    <div className="w-full rounded-xl shadow-neu dark:shadow-neu-dark p-4 block">
+    <div className="w-full rounded-xl shadow-neu dark:shadow-neu-dark p-4">
       <div className="h-9 flex mb-4">
         {isEditing ? (
           <input
