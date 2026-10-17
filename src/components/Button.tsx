@@ -23,7 +23,7 @@ export function Button({
   return (
     <button
       onClick={onClick}
-      className={`flex shrink-0 items-center justify-center gap-2 p-2 rounded-lg cursor-pointer font-extrabold text-xl transition-all duration-300
+      className={`flex shrink-0 items-center justify-center gap-0.5 p-2 rounded-lg cursor-pointer font-extrabold text-xl transition-all duration-300
       ${variationStyles[variation]}`}
     >
       {children}
