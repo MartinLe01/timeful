@@ -1,5 +1,6 @@
 import { useTasks } from '../hooks/useTasks';
 import { TaskInputs } from './TaskInputs';
+import { TaskCard } from './TaskCard';
 
 interface TasksSectionProps {
   isTimerFocused: boolean;
@@ -20,9 +21,13 @@ export function TasksSection({ isTimerFocused, onClick }: TasksSectionProps) {
       onClick={isTimerFocused ? onClick : () => {}}
     >
       <div
-        className={`shadow-neu dark:shadow-neu-dark rounded-lg transition-all duration-700 flex-col p-4 md:p-10 h-full ${isTimerFocused ? 'hidden' : 'flex'}`}
+        className={`shadow-neu dark:shadow-neu-dark rounded-lg transition-all duration-700 flex-col p-4 md:p-10 h-full gap-8 ${isTimerFocused ? 'hidden' : 'flex'}`}
       >
         <TaskInputs create={tasks.create} />
+
+        <div className="flex gap-4">
+          <TaskCard />
+        </div>
       </div>
     </div>
   );
