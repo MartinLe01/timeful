@@ -37,6 +37,7 @@ export function TaskCard({ task, onDelete, onRename }: TaskCardProps) {
       <div className="h-9 flex mb-4">
         {isEditing ? (
           <input
+            autoFocus
             value={newTitle}
             onChange={(e) => setNewTitle(e.target.value)}
             onKeyDown={(e) => handleKeyDown(e)}
