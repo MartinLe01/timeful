@@ -10,11 +10,17 @@ interface TaskItem {
 interface TaskCardProps {
   task: TaskItem;
   onDelete: (id: string) => void;
+  onRename: (id: string, title: string) => void;
 }
 
-export function TaskCard({ task, onDelete }: TaskCardProps) {
+export function TaskCard({ task, onDelete, onRename }: TaskCardProps) {
   const [isEditing, setIsEditing] = useState(false);
-  const [newTitle, setNewTitle] = useState('Task');
+  const [newTitle, setNewTitle] = useState(task.title);
+
+  function onConfirmEdit() {
+    setIsEditing(!isEditing);
+    onRename(task.id, newTitle);
+  }
 
   return (
     <div className="w-full rounded-xl shadow-neu dark:shadow-neu-dark p-4 block">
@@ -50,10 +56,7 @@ export function TaskCard({ task, onDelete }: TaskCardProps) {
             >
               <span className="material-symbols-outlined">close</span>
             </Button>
-            <Button
-              onClick={() => setIsEditing(!isEditing)}
-              variation="primary"
-            >
+            <Button onClick={onConfirmEdit} variation="primary">
               <span className="material-symbols-outlined">arrow_forward</span>
             </Button>
           </>
