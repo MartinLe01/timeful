@@ -1,6 +1,5 @@
-import { Button } from './Button';
 import { useTasks } from '../hooks/useTasks';
-import { useState } from 'react';
+import { TaskInputs } from './TaskInputs';
 
 interface TasksSectionProps {
   isTimerFocused: boolean;
@@ -8,13 +7,7 @@ interface TasksSectionProps {
 }
 
 export function TasksSection({ isTimerFocused, onClick }: TasksSectionProps) {
-  const [taskTitle, setTaskTitle] = useState('');
   const tasks = useTasks();
-
-  function onAddTask() {
-    tasks.create(taskTitle);
-    setTaskTitle('');
-  }
 
   return (
     <div
@@ -29,19 +22,7 @@ export function TasksSection({ isTimerFocused, onClick }: TasksSectionProps) {
       <div
         className={`shadow-neu dark:shadow-neu-dark rounded-lg transition-all duration-700 flex-col p-4 md:p-10 h-full ${isTimerFocused ? 'hidden' : 'flex'}`}
       >
-        <div className="shadow-neu dark:shadow-neu-dark rounded-lg text-toxic-violet dark:text-slate-50 font-medium flex justify-between items-center gap-4 p-4">
-          <input
-            value={taskTitle}
-            onChange={(e) => setTaskTitle(e.target.value)}
-            type="text"
-            className="flex-2 h-full rounded-lg shadow-neu-inset dark:shadow-neu-inset-dark p-2 text-slate-950 dark:text-slate-50"
-            placeholder="Type new task title..."
-          />
-          <Button onClick={onAddTask}>
-            <span className="material-symbols-outlined">add</span>
-            <span className="sr-only md:not-sr-only text-lg">Add task</span>
-          </Button>
-        </div>
+        <TaskInputs create={tasks.create} />
       </div>
     </div>
   );
