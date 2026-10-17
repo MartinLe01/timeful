@@ -19,7 +19,7 @@ export function TaskInputs({ create }: TaskInputsProps) {
         value={taskTitle}
         onChange={(e) => setTaskTitle(e.target.value)}
         type="text"
-        className="flex-2 h-full rounded-lg shadow-neu-inset dark:shadow-neu-inset-dark p-2 text-slate-950 dark:text-slate-50"
+        className="h-full flex-1 min-w-0 rounded-lg shadow-neu-inset dark:shadow-neu-inset-dark p-2 text-slate-950 dark:text-slate-50"
         placeholder="Type new task title..."
       />
       <Button onClick={onAddTask}>
