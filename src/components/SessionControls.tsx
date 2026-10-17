@@ -1,4 +1,4 @@
-type ModeType = 'pomodoro' | 'break';
+import type { ModeType } from '../types';
 
 interface SessionControlsProps {
   mode: ModeType;

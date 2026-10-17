@@ -1,11 +1,6 @@
 import { useState } from 'react';
 import { Button } from './Button';
-
-interface TaskItem {
-  id: string;
-  title: string;
-  isActive: boolean;
-}
+import type { TaskItem } from '../types';
 
 interface TaskCardProps {
   task: TaskItem;
@@ -17,23 +12,23 @@ export function TaskCard({ task, onDelete, onRename }: TaskCardProps) {
   const [isEditing, setIsEditing] = useState(false);
   const [newTitle, setNewTitle] = useState(task.title);
 
-  function onConfirmEdit() {
+  function handleConfirmEdit() {
     const trimmed = newTitle.trim();
     if (trimmed === '') return;
     onRename(task.id, trimmed);
     setIsEditing(false);
   }
 
-  function onCancelEdit() {
+  function handleCancelEdit() {
     setIsEditing(false);
     setNewTitle(task.title);
   }
 
   function handleKeyDown(e: React.KeyboardEvent<HTMLInputElement>) {
     if (e.key === 'Enter') {
-      onConfirmEdit();
+      handleConfirmEdit();
     } else if (e.key === 'Escape') {
-      onCancelEdit();
+      handleCancelEdit();
     }
   }
 
@@ -79,7 +74,7 @@ export function TaskCard({ task, onDelete, onRename }: TaskCardProps) {
           </>
         ) : (
           <>
-            <Button onClick={onCancelEdit} variation="secondary">
+            <Button onClick={handleCancelEdit} variation="secondary">
               <span className="material-symbols-outlined" aria-hidden="true">
                 close
               </span>
@@ -87,7 +82,7 @@ export function TaskCard({ task, onDelete, onRename }: TaskCardProps) {
                 Cancel
               </span>
             </Button>
-            <Button onClick={onConfirmEdit} variation="primary">
+            <Button onClick={handleConfirmEdit} variation="primary">
               <span className="material-symbols-outlined" aria-hidden="true">
                 arrow_forward
               </span>

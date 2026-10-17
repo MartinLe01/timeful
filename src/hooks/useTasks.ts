@@ -1,12 +1,7 @@
 import { useReducer, useEffect } from 'react';
+import type { TaskItem } from '../types';
 
 const STORAGE_KEY = 'tasks';
-
-interface TaskItem {
-  id: string;
-  title: string;
-  isActive: boolean;
-}
 
 interface Tasks {
   items: TaskItem[];
