@@ -36,4 +36,5 @@
   --shadow-display-dark:
     inset 15px 15px 9px #050505, inset -15px -15px 9px #0f0f0f;
   --shadow-display: inset 9px 9px 0px #040404, inset -9px -9px 0px #101010;
+  --shadow-inset-red: inset 4px 4px 8px #d98a8a, inset -4px -4px 8px #ffbaba;
 }
