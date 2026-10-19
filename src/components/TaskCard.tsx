@@ -6,9 +6,15 @@ interface TaskCardProps {
   task: TaskItem;
   onDelete: (id: string) => void;
   onRename: (id: string, title: string) => void;
+  onToggle: (id: string) => void;
 }
 
-export function TaskCard({ task, onDelete, onRename }: TaskCardProps) {
+export function TaskCard({
+  task,
+  onDelete,
+  onRename,
+  onToggle,
+}: TaskCardProps) {
   const [isEditing, setIsEditing] = useState(false);
   const [newTitle, setNewTitle] = useState(task.title);
 
@@ -37,6 +43,10 @@ export function TaskCard({ task, onDelete, onRename }: TaskCardProps) {
     }
   }
 
+  function handleToggleActive() {
+    onToggle(task.id);
+  }
+
   return (
     <div className="w-full rounded-xl shadow-neu dark:shadow-neu-dark p-4">
       <div className="h-9 flex mb-4">
@@ -59,6 +69,14 @@ export function TaskCard({ task, onDelete, onRename }: TaskCardProps) {
       <div className="flex justify-end gap-2">
         {!isEditing ? (
           <>
+            <Button onClick={handleToggleActive}>
+              <span className="material-symbols-outlined" aria-hidden="true">
+                {task.isActive ? 'keep_off' : 'keep'}
+              </span>
+              <span className="text-lg font-semibold sr-only md:not-sr-only">
+                Set as Active
+              </span>
+            </Button>
             <Button onClick={handleStartEdit}>
               <span className="material-symbols-outlined" aria-hidden="true">
                 edit_square

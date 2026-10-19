@@ -33,6 +33,7 @@ export function TasksSection({ isTimerFocused, onClick }: TasksSectionProps) {
                 task={task}
                 onDelete={tasks.delete}
                 onRename={tasks.rename}
+                onToggle={tasks.toggleActive}
               />
             );
           })}
