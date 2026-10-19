@@ -26,7 +26,7 @@ export function TaskInputs({ create }: TaskInputsProps) {
         onChange={(e) => setTaskTitle(e.target.value)}
         onKeyDown={(e) => handleKeyDown(e)}
         type="text"
-        className="h-full flex-1 min-w-0 rounded-lg shadow-neu-inset dark:shadow-neu-inset-dark p-2 text-slate-950 dark:text-slate-50"
+        className="h-full flex-1 min-w-0 rounded-lg shadow-neu-inset-low dark:shadow-neu-inset-dark-low p-2 text-slate-950 dark:text-slate-50"
         placeholder="Type new task title..."
       />
       <Button onClick={handleAddTask}>

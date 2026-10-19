@@ -23,7 +23,7 @@
   --shadow-neu-inset-dark:
     inset 15px 15px 30px #161616, inset -15px -15px 30px #3c3c3c;
   --shadow-neu-inset-dark-low:
-    inset 6px 6px 12px #222222, inset -6px -6px 12px #303030;
+    inset 6px 6px 12px #1e1e1e, inset -6px -6px 12px #343434;
   --shadow-neu-inset-violet:
     inset 5px 5px 10px #210042, inset -5px -5px 10px #5900b2;
   --shadow-neu-inset-light:
