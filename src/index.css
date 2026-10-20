@@ -28,11 +28,6 @@
     inset 5px 5px 10px #210042, inset -5px -5px 10px #5900b2;
   --shadow-neu-inset-light:
     inset 5px 5px 9px #3c0077, inset -5px -5px 9px #9600ff;
-  --shadow-retro: inset -7px -7px 8px #2d005a, inset 7px 7px 8px #4d009a;
-  --shadow-retro-hover:
-    inset -5px -5px 10px #38006f, inset 5px 5px 10px #420085;
-  --shadow-light: inset -5px -5px 8px #420084, inset 5px 5px 8px #9000ff;
-  --shadow-light-hover: inset -5px -5px 8px #6200c2, inset 5px 5px 8px #7000e0;
   --shadow-display-dark:
     inset 15px 15px 9px #050505, inset -15px -15px 9px #0f0f0f;
   --shadow-display: inset 9px 9px 0px #040404, inset -9px -9px 0px #101010;
