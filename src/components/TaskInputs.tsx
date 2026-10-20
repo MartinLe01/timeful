@@ -9,7 +9,9 @@ export function TaskInputs({ create }: TaskInputsProps) {
   const [taskTitle, setTaskTitle] = useState('');
 
   function handleAddTask() {
-    create(taskTitle);
+    const trimmedTitle = taskTitle.trim();
+    if (trimmedTitle === '') return;
+    create(trimmedTitle);
     setTaskTitle('');
   }
 
