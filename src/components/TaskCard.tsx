@@ -48,7 +48,9 @@ export function TaskCard({
   }
 
   return (
-    <div className="w-full rounded-xl shadow-neu dark:shadow-neu-dark p-4">
+    <div
+      className={`w-full rounded-xl shadow-neu dark:shadow-neu-dark p-4 ${task.isActive ? 'inset-ring-4 inset-ring-light-violet' : ''}`}
+    >
       <div className="h-9 flex mb-4">
         {isEditing ? (
           <input
@@ -61,12 +63,15 @@ export function TaskCard({
           />
         ) : (
           <p className="text-xl text-toxic-violet dark:text-slate-50 h-full pt-1 pl-2">
+            <span className="font-extrabold">
+              {task.isActive ? 'Pinned:' : ''}
+            </span>{' '}
             {task.title}
           </p>
         )}
       </div>
 
-      <div className="flex justify-end gap-2">
+      <div className="flex justify-end gap-4">
         {!isEditing ? (
           <>
             <Button onClick={handleToggleActive}>
@@ -74,7 +79,7 @@ export function TaskCard({
                 {task.isActive ? 'keep_off' : 'keep'}
               </span>
               <span className="text-lg font-semibold sr-only md:not-sr-only">
-                Set as Active
+                {task.isActive ? 'Unpin' : 'Pin'}
               </span>
             </Button>
             <Button onClick={handleStartEdit}>
