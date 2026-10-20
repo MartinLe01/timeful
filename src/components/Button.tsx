@@ -1,32 +1,32 @@
-interface ButtonStyles {
-  bg: string;
-  shadow: string;
-  shadowOnHover: string;
-}
+type ButtonVariations = 'primary' | 'secondary' | 'danger';
 
 interface ButtonProps {
-  label: string;
+  children: React.ReactNode;
   onClick: () => void;
-  styles?: ButtonStyles;
+  variation?: ButtonVariations;
 }
 
+const variationStyles: Record<ButtonVariations, string> = {
+  primary:
+    'text-toxic-violet dark:text-slate-50 shadow-neu-hard dark:shadow-neu-dark-hard hover:bg-light-violet hover:text-slate-50 hover:dark:bg-toxic-violet hover:-translate-y-0.5',
+  secondary:
+    'hover:shadow-neu-inset-low hover:dark:shadow-neu-inset-dark-low text-toxic-violet dark:text-slate-50',
+  danger:
+    'text-red-700 hover:inset-ring-2 hover:bg-red-300 hover:shadow-inset-red',
+};
+
 export function Button({
-  label,
+  children,
   onClick,
-  styles = {
-    bg: 'bg-light-violet dark:bg-toxic-violet',
-    shadow: 'shadow-light dark:shadow-retro',
-    shadowOnHover: 'hover:shadow-light-hover dark:hover:shadow-retro-hover',
-  },
+  variation = 'primary',
 }: ButtonProps) {
   return (
-    <div className="h-1/5 rounded-xl dark:shadow-neu-dark-hard shadow-neu-hard p-2">
-      <button
-        onClick={onClick}
-        className={`${styles.bg} ${styles.shadow} ${styles.shadowOnHover} h-full w-full rounded-lg transition:all duration-400 cursor-pointer font-extrabold text-xl`}
-      >
-        {label}
-      </button>
-    </div>
+    <button
+      onClick={onClick}
+      className={`flex shrink-0 items-center justify-center gap-0.5 p-2 rounded-lg cursor-pointer font-extrabold text-xl transition-all duration-300
+      ${variationStyles[variation]}`}
+    >
+      {children}
+    </button>
   );
 }
