@@ -62,7 +62,7 @@ export function TaskCard({
             className="shadow-neu-inset-low dark:shadow-neu-inset-dark-low rounded-lg min-w-0 h-full text-xl text-toxic-violet dark:text-slate-50 inline-block p-2 w-full"
           />
         ) : (
-          <p className="text-xl text-toxic-violet dark:text-slate-50 h-full pt-1 pl-2">
+          <p className="text-xl text-toxic-violet dark:text-slate-50 h-full pt-1 pl-2 truncate">
             <span className="font-extrabold">
               {task.isActive ? 'Pinned:' : ''}
             </span>{' '}
