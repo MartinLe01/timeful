@@ -28,7 +28,7 @@ export function TasksSection({ isTimerFocused, onClick }: TasksSectionProps) {
           (activeTask ? (
             <ActiveTaskPreview task={activeTask} />
           ) : (
-            <p className="text-toxic-violet text-2xl text-center p-4">
+            <p className="text-toxic-violet dark:text-slate-50 text-2xl text-center p-4">
               No pinned task. Open your tasks to pin one.
             </p>
           ))}

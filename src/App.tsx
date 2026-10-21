@@ -22,6 +22,18 @@ function App() {
         <TimerSection isTimerFocused={isTimerFocused} onClick={toggle} />
         <TasksSection isTimerFocused={isTimerFocused} onClick={toggle} />
       </main>
+
+      <footer className="text-sm text-center ...">
+        Built by Chi Thanh Le ·{' '}
+        <a
+          href="https://github.com/MartinLe01/timeful"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline"
+        >
+          View on GitHub
+        </a>
+      </footer>
     </div>
   );
 }
