@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 
 function App() {
   const [isDarkOn, toggleDark] = useToggle();
-  const [isTimerFocused, toggle] = useToggle();
+  const [isTimerFocused, toggle] = useToggle(true);
 
   useEffect(() => {
     document.documentElement.classList.toggle('dark', isDarkOn);
@@ -14,7 +14,7 @@ function App() {
 
   return (
     <div
-      className={`flex min-h-screen flex-col gap-6 p-2 ${isDarkOn ? 'bg-dark' : 'bg-soft-chrome'} transition-all duration-300 ease-in`}
+      className={`flex min-h-screen flex-col gap-6 p-2 bg-soft-chrome dark:bg-dark transition-all duration-300 ease-in`}
     >
       <Header isDarkOn={isDarkOn} setIsDarkOn={toggleDark} />
 
@@ -22,6 +22,18 @@ function App() {
         <TimerSection isTimerFocused={isTimerFocused} onClick={toggle} />
         <TasksSection isTimerFocused={isTimerFocused} onClick={toggle} />
       </main>
+
+      <footer className="text-sm text-center ...">
+        Built by Chi Thanh Le ·{' '}
+        <a
+          href="https://github.com/MartinLe01/timeful"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline"
+        >
+          View on GitHub
+        </a>
+      </footer>
     </div>
   );
 }

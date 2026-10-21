@@ -1,20 +1,57 @@
+import { useTasks } from '../hooks/useTasks';
+import { TaskInputs } from './TaskInputs';
+import { TaskCard } from './TaskCard';
+import { ActiveTaskPreview } from './ActiveTaskPreview';
+
 interface TasksSectionProps {
   isTimerFocused: boolean;
   onClick: () => void;
 }
 
 export function TasksSection({ isTimerFocused, onClick }: TasksSectionProps) {
+  const tasks = useTasks();
+
+  const activeTask = tasks.sortedTasks.find((item) => item.isActive);
+
   return (
-    <div
-      className={`w-full rounded-xl transition-all duration-700 ease-in-out md:w-2/3 md:mx-auto
+    <>
+      <div
+        className={`w-full rounded-2xl transition-all duration-500 ease-in-out md:w-2/3 md:mx-auto p-8
         ${
           isTimerFocused
-            ? 'flex-1 shadow-neu dark:shadow-neu-dark hover:shadow-neu-low hover:dark:shadow-neu-dark-low'
-            : 'flex-5 shadow-neu-inset dark:shadow-neu-inset-dark'
+            ? 'grow basis-0 shadow-neu dark:shadow-neu-dark hover:shadow-neu-low hover:dark:shadow-neu-dark-low'
+            : 'grow-3 basis-0 shadow-neu-inset dark:shadow-neu-inset-dark'
         } `}
-      onClick={onClick}
-    >
-      Tasks
-    </div>
+        onClick={isTimerFocused ? onClick : () => {}}
+      >
+        {isTimerFocused &&
+          (activeTask ? (
+            <ActiveTaskPreview task={activeTask} />
+          ) : (
+            <p className="text-toxic-violet dark:text-slate-50 text-2xl text-center p-4">
+              No pinned task. Open your tasks to pin one.
+            </p>
+          ))}
+        <div
+          className={`shadow-neu dark:shadow-neu-dark rounded-lg transition-all duration-700 flex-col p-4 md:p-10 h-full gap-8 ${isTimerFocused ? 'hidden' : 'flex'}`}
+        >
+          <TaskInputs create={tasks.create} />
+
+          <div className="flex flex-col gap-4">
+            {tasks.sortedTasks.map((task) => {
+              return (
+                <TaskCard
+                  key={task.id}
+                  task={task}
+                  onDelete={tasks.delete}
+                  onRename={tasks.rename}
+                  onToggle={tasks.toggleActive}
+                />
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    </>
   );
 }

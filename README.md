@@ -1,75 +1,46 @@
-# React + TypeScript + Vite
+# Timeful.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A Pomodoro timer and task list in one simple web app.
 
-Currently, two official plugins are available:
+🔗 **Live demo:** [timeful.vercel.app](https://timeful.vercel.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+![Timeful screenshot](./docs/screenshot.png)
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Pomodoro timer with focus and break sessions that loop automatically
+- Task list: add, rename, and delete tasks
+- Pin one task to keep it visible while the timer is focused
+- Tasks saved in your browser (localStorage), so they survive a refresh
+- Light and dark mode
+- Responsive layout for desktop and mobile
+- Keyboard support (Enter to confirm, Escape to cancel when editing)
 
-## Expanding the ESLint configuration
+## Tech stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- [React](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
+- [Vite](https://vite.dev/)
+- [Tailwind CSS v4](https://tailwindcss.com/)
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Getting started
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+git clone https://github.com/MartinLe01/timeful.git
+cd timeful
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+## What I learned
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- Building my first project in TypeScript from the start
+- Managing state with `useReducer` and typed actions in custom hooks
+- Persisting and validating data from localStorage
+- Building a neumorphism UI with Tailwind
+- Debugging a Safari-only layout bug caused by percentage heights inside flexbox
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Credits
 
-```
+- 7-segment font: [DSEG](https://www.keshikan.net/fonts-e.html) by Keshikan (SIL Open Font License 1.1)
+- Icons: [Material Symbols](https://fonts.google.com/icons)
+- Font: [Nunito Sans](https://fonts.google.com/specimen/Nunito+Sans)
