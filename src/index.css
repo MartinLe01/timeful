@@ -1,5 +1,4 @@
 @import 'tailwindcss';
-@plugin "daisyui";
 @import 'dseg/css/dseg.css';
 @custom-variant dark (&:where(.dark, .dark *));
 
